@@ -1,0 +1,382 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 255, 255, 0.18),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(255, 255, 255, 0.12),
+      transparent 25%
+    ),
+    linear-gradient(135deg, #ff5f7e, #d84c9f 55%, #7d4acb);
+}
+
+#hearts-container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floating-heart {
+  position: absolute;
+  bottom: -40px;
+  animation: floatUp linear forwards;
+  opacity: 0.75;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 18px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(80, 20, 70, 0.18);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  z-index: 10;
+}
+
+.logo {
+  font-weight: 600;
+}
+
+.music-button,
+.primary-button,
+.secondary-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 22px;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.25s ease;
+}
+
+.music-button {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.music-button:hover,
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translateY(-3px) scale(1.03);
+}
+
+main,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 130px 7% 80px;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.eyebrow,
+.section-label {
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.85;
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  font-size: clamp(55px, 9vw, 105px);
+  line-height: 0.95;
+  margin-bottom: 18px;
+}
+
+.hero h1 span {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+}
+
+.hero-text {
+  font-size: 18px;
+  line-height: 1.9;
+  max-width: 620px;
+}
+
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.primary-button {
+  background: #fff;
+  color: #d44784;
+}
+
+.secondary-button {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.heart-big {
+  justify-self: center;
+  font-size: clamp(150px, 25vw, 280px);
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 20px 60px rgba(80, 0, 50, 0.3);
+  animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+.section {
+  padding: 90px 7%;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: clamp(30px, 5vw, 50px);
+  margin-bottom: 14px;
+}
+
+.section-intro {
+  margin-bottom: 35px;
+}
+
+.glass-card {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 45px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 25px 70px rgba(50, 0, 50, 0.18);
+  backdrop-filter: blur(16px);
+}
+
+.letter-card {
+  text-align: left;
+}
+
+.letter-card h2 {
+  text-align: center;
+}
+
+.letter-card p {
+  line-height: 2;
+  margin-top: 18px;
+}
+
+.signature {
+  text-align: right;
+}
+
+.hidden-section {
+  display: none;
+}
+
+.hidden-section.show {
+  display: block;
+  animation: reveal 0.8s ease;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gallery {
+  max-width: 1100px;
+  margin: 35px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.photo-card {
+  overflow: hidden;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 18px 45px rgba(50, 0, 50, 0.18);
+  transition: 0.3s ease;
+}
+
+.photo-card:hover {
+  transform: translateY(-8px) rotate(-1deg);
+}
+
+.photo-card img {
+  width: 100%;
+  height: 330px;
+  display: block;
+  object-fit: cover;
+}
+
+.photo-card figcaption {
+  padding: 16px;
+}
+
+.counter {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.counter-box {
+  padding: 22px 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.13);
+}
+
+.counter-box span {
+  display: block;
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.counter-box small {
+  opacity: 0.85;
+}
+
+.final-section {
+  padding-bottom: 120px;
+}
+
+.rose {
+  font-size: 65px;
+  margin-bottom: 10px;
+}
+
+.question {
+  font-size: 20px;
+  margin: 25px 0;
+}
+
+footer {
+  padding: 28px 20px;
+  text-align: center;
+  background: rgba(30, 0, 30, 0.16);
+}
+
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-content {
+    margin: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .heart-big {
+    font-size: 150px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .counter {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .glass-card {
+    padding: 30px 22px;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    padding: 15px 4%;
+  }
+
+  .logo {
+    font-size: 14px;
+  }
+
+  .music-button {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  .hero {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .photo-card img {
+    height: 280px;
+  }
+}
